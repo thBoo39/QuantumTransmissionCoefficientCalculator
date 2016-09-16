@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Documentation &#8212; Transmission Coefficient Calculator 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Transmission Coefficient Calculator 1.0 documentation" href="index.html" />
+    <link rel="prev" title="Project Summary" href="project.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="project.html" title="Project Summary"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Transmission Coefficient Calculator 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-myTransmissionCoefficient">
+<span id="documentation"></span><span id="ch-ref-doc"></span><h1>Documentation<a class="headerlink" href="#module-myTransmissionCoefficient" title="Permalink to this headline">¶</a></h1>
+<p>QuantumTransmissionCoefficientCalculator</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">platform:</th><td class="field-body">Python 2.7</td>
+</tr>
+</tbody>
+</table>
+<p>This python code is to calculate quantum tunneling transmission coefficient
+using piece wise constant method.</p>
+<p>To use, first specify a barrier structure in myStructure.py
+myStructure.py will be imported as below
+Then, create an object, call compute method with numpy array specifying
+desired energy range of interest. It will return transmission coefficient.</p>
+<p>See main function in this module for usage</p>
+<dl class="class">
+<dt id="myTransmissionCoefficient.QuantumTransmissionCoefficientCalculator">
+<em class="property">class </em><code class="descclassname">myTransmissionCoefficient.</code><code class="descname">QuantumTransmissionCoefficientCalculator</code><span class="sig-paren">(</span><em>N=1</em><span class="sig-paren">)</span><a class="headerlink" href="#myTransmissionCoefficient.QuantumTransmissionCoefficientCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides quantum transmission coefficient.</p>
+<p>Creates an object and call a function to get started.</p>
+<dl class="method">
+<dt id="myTransmissionCoefficient.QuantumTransmissionCoefficientCalculator.apply_bias">
+<code class="descname">apply_bias</code><span class="sig-paren">(</span><em>bias</em><span class="sig-paren">)</span><a class="headerlink" href="#myTransmissionCoefficient.QuantumTransmissionCoefficientCalculator.apply_bias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply bias to the given potential strcuture.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>bias: Specify a value in (V)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="myTransmissionCoefficient.QuantumTransmissionCoefficientCalculator.compute">
+<code class="descname">compute</code><span class="sig-paren">(</span><em>E</em><span class="sig-paren">)</span><a class="headerlink" href="#myTransmissionCoefficient.QuantumTransmissionCoefficientCalculator.compute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute transmission coefficient in the energy range E</p>
+<p>To compute transmission coefficient, piece wise constant method is
+performed.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>E: specify desired energy range in (J)
+e.g. E = np.linspace(0, 1.0)*1.60e-19</dd>
+<dt>Return:</dt>
+<dd>TC: transmission coefficient (no unit)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="myTransmissionCoefficient.QuantumTransmissionCoefficientCalculator.plot_structure">
+<code class="descname">plot_structure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#myTransmissionCoefficient.QuantumTransmissionCoefficientCalculator.plot_structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot potential structure</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="usage-provided-in-main-function-in-the-module">
+<span id="main"></span><h2>Usage provided in main function in the module.<a class="headerlink" href="#usage-provided-in-main-function-in-the-module" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># set up output plot font size</span>
+    <span class="n">myutil</span><span class="o">.</span><span class="n">setup_fonts</span><span class="p">()</span>
+    <span class="c1"># set up energy range of interest</span>
+    <span class="c1"># Note that 0 eV gives a warning -&gt; division by zero</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span><span class="o">*</span><span class="n">nu</span><span class="o">.</span><span class="n">eV</span>
+    <span class="c1"># create an object RTD with N=20 subdivision</span>
+    <span class="n">RTD</span> <span class="o">=</span> <span class="n">QuantumTransmissionCoefficientCalculator</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="c1"># check configured potential structure described in myStructure.py</span>
+    <span class="c1"># which is imported at the beginnning of this module</span>
+    <span class="n">RTD</span><span class="o">.</span><span class="n">plot_structure</span><span class="p">()</span>
+    <span class="c1"># compute method gives a transmission coefficient TC</span>
+    <span class="n">TC1</span> <span class="o">=</span> <span class="n">RTD</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
+    <span class="c1"># apply bias .2 (V)</span>
+    <span class="n">RTD</span><span class="o">.</span><span class="n">apply_bias</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">RTD</span><span class="o">.</span><span class="n">plot_structure</span><span class="p">()</span>
+    <span class="c1"># recalculate transmission coefficient</span>
+    <span class="n">TC2</span> <span class="o">=</span> <span class="n">RTD</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
+    <span class="c1"># Results</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">TC1</span><span class="p">,</span> <span class="n">E</span><span class="o">/</span><span class="n">nu</span><span class="o">.</span><span class="n">eV</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;0 V&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">TC2</span><span class="p">,</span> <span class="n">E</span><span class="o">/</span><span class="n">nu</span><span class="o">.</span><span class="n">eV</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;0.2 V&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Transmission coefficient&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Energy (eV)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Documentation</a><ul>
+<li><a class="reference internal" href="#usage-provided-in-main-function-in-the-module">Usage provided in main function in the module.</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="project.html"
+                        title="previous chapter">Project Summary</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/code.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="project.html" title="Project Summary"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Transmission Coefficient Calculator 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Toshi.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>
