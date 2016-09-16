@@ -25,7 +25,7 @@ Tunneling through 5 barriers
 
 Result:
 
-As can be seen, for 5 barriers, the resonant energies are split into quadruplets. For n barriers, there should be n-1 fold splitting at resonant energies [#foot_2]_.
+As can be seen, for 5 barriers without bias, the resonant energies are split into quadruplets. For n barriers, there should be n-1 fold splitting at resonant energies [#foot_2]_.
 
 
 |TC|
