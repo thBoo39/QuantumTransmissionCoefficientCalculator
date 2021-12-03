@@ -16,3 +16,4 @@ m = {'GaAs': 0.063,
 potential = [0.0, 0.956, 0.0, 0.956, 0.0]
 thickness = [10, 3, 10, 3, 10]
 effective_mass = [m['GaAs'], m['AlAs'], m['GaAs'], m['AlAs'], m['GaAs']]
+position = []

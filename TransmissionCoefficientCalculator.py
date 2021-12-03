@@ -17,12 +17,15 @@ from __future__ import division
 import numpy as np
 from scipy import constants as sc
 from matplotlib import pyplot as plt
+import importlib
+
 # custom modules
 import nu
 import myutil
 # A module containing a structure of interest
 # module name can be chosen arbitrary but set it to 'as myStr'
-import myStructure as myStr
+desiredModule = input("Which module would you like to import?")
+myStr = importlib.import_module(desiredModule)
 
 
 class QuantumTransmissionCoefficientCalculator():
