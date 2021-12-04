@@ -1,6 +1,6 @@
 """QuantumTransmissionCoefficientCalculator
 
-:platform: Python 2.7
+:platform: Python 3.9
 
 This python code is to calculate quantum tunneling transmission coefficient
 using piece wise constant method.
@@ -14,15 +14,24 @@ See main function in this module for usage
 """
 
 from __future__ import division
+import os
 import numpy as np
 from scipy import constants as sc
 from matplotlib import pyplot as plt
+
 # custom modules
 import nu
 import myutil
 # A module containing a structure of interest
 # module name can be chosen arbitrary but set it to 'as myStr'
-import myStructure as myStr
+print("Config: " + str(os.listdir("configs")))
+desiredModule = input("Which module would you like to import? ")
+if(desiredModule[len(desiredModule)-3:] == ".py"):
+  desiredModule = desiredModule[0:len(desiredModule)-3]
+
+print(desiredModule)
+exec("from configs import " + desiredModule + " as myStr")
+
 
 
 class QuantumTransmissionCoefficientCalculator():

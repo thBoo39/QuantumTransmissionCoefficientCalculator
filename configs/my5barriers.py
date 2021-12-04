@@ -1,4 +1,4 @@
-# list of effective mass from www.ioffe.ru/SVA/NSM/Semicond/index.html
+ # list of effective mass from www.ioffe.ru/SVA/NSM/Semicond/index.html
 m = {'GaAs': 0.063,
      'AlxGa1-xAs': lambda x: 0.063+0.083*x,
      'AlAs': 0.146,
@@ -18,3 +18,4 @@ thickness = [4, 2, 6, 2, 6, 2, 6, 2, 6, 2, 4]
 effective_mass = [m['GaAs'], m['GaAs'], m['GaAs'], m['GaAs'],
                   m['GaAs'], m['GaAs'], m['GaAs'], m['GaAs'], m['GaAs'],
                   m['GaAs'], m['GaAs']]
+position = []

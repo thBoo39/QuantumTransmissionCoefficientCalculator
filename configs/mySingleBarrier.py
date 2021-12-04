@@ -13,6 +13,7 @@ m = {'GaAs': 0.063,
 # position (nm)
 # effective_mass (m_0 electron free mass)
 # Multiple Barriers
-potential = [0.0, 0.956, 0.0, 0.956, 0.0]
-thickness = [10, 3, 10, 3, 10]
-effective_mass = [m['GaAs'], m['AlAs'], m['GaAs'], m['AlAs'], m['GaAs']]
+potential = [0.0, 0.375, 0.0]
+thickness = [10, 35, 10]
+effective_mass = [m['GaAs'], m['AlxGa1-xAs'](.5), m['GaAs']]
+position = []
